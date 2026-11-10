@@ -1,0 +1,51 @@
+### Запрос 1: Ошибка 400 (дата в прошлом)
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+  "event_name": "Прошедшая встреча",
+  "date": "2020-01-01T10:00:00Z",
+  "location": "Ауд. 204"
+}
+
+### Запрос 2: Успешное создание события 1
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+  "event_name": "Хакатон по ИИ",
+  "date": "2027-05-15T10:00:00Z",
+  "location": "Главный корпус ТГУ"
+}
+
+### Запрос 3: Успешное создание события 2
+POST http://localhost:3000/api/events
+Content-Type: application/json
+
+{
+  "event_name": "Летний митап",
+  "date": "2027-07-20T18:00:00Z",
+  "location": "Конференц-зал"
+}
+
+### Запрос 4: Получение всех событий
+GET http://localhost:3000/api/events
+
+### Запрос 5: Фильтрация по дате ?after=
+GET http://localhost:3000/api/events?after=2027-06-01
+
+### Запрос 6: Обновление события 1
+PUT http://localhost:3000/api/events/13
+Content-Type: application/json
+
+{
+  "event_name": "Хакатон по ИИ (Обновленный)",
+  "date": "2027-05-16T12:00:00Z",
+  "location": "Аудитория 302"
+}
+
+### Запрос 7: Удаление события 1
+DELETE http://localhost:3000/api/events/13
+
+### Запрос 8: Проверка 404 (повторное удаление)
+DELETE http://localhost:3000/api/events/13

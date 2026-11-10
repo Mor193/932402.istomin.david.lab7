@@ -1,0 +1,13 @@
+{
+  "name": "events-crud-api",
+  "version": "1.0.0",
+  "description": "Лабораторная работа 7 - Вариант 4 (События)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
